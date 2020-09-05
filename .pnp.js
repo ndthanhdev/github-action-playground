@@ -41,7 +41,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/preset-env", "virtual:fbcdf27d3c6ce188ba6e8c82f32fc946e8125818b5f3e5ca428b8a8c1dd2728fa7ba4da54e13ddd80eb6ee95ee23fd30561cde89a84ba99a80ecd2ebfafbaa81#npm:7.11.5"],
             ["babel-jest", "virtual:3bf5cb85a2e664643c98d2e719d27af43974598ccaa6ea3c355c3ae5c1d5177e21a427bd1a7e70bdce3b4affdbcea39f2ffaa213984380213caeec2a5a6a00da#npm:26.3.0"],
             ["jest", "npm:26.4.2"],
-            ["parcel", "npm:2.0.0-beta.1"]
+            ["parcel", "npm:2.0.0-beta.1"],
+            ["ramda", "npm:0.27.1"]
           ],
           "linkType": "SOFT",
         }]
@@ -4067,7 +4068,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["create-hash", "npm:1.2.0"],
             ["evp_bytestokey", "npm:1.0.3"],
             ["inherits", "npm:2.0.4"],
-            ["safe-buffer", "npm:5.1.2"]
+            ["safe-buffer", "npm:5.2.1"]
           ],
           "linkType": "HARD",
         }]
@@ -4393,7 +4394,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["cipher-base", "npm:1.0.4"],
             ["inherits", "npm:2.0.4"],
-            ["safe-buffer", "npm:5.1.2"]
+            ["safe-buffer", "npm:5.2.1"]
           ],
           "linkType": "HARD",
         }]
@@ -4800,7 +4801,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["create-hash", "npm:1.2.0"],
             ["inherits", "npm:2.0.4"],
             ["ripemd160", "npm:2.0.2"],
-            ["safe-buffer", "npm:5.1.2"],
+            ["safe-buffer", "npm:5.2.1"],
             ["sha.js", "npm:2.4.11"]
           ],
           "linkType": "HARD",
@@ -6199,7 +6200,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/preset-env", "virtual:fbcdf27d3c6ce188ba6e8c82f32fc946e8125818b5f3e5ca428b8a8c1dd2728fa7ba4da54e13ddd80eb6ee95ee23fd30561cde89a84ba99a80ecd2ebfafbaa81#npm:7.11.5"],
             ["babel-jest", "virtual:3bf5cb85a2e664643c98d2e719d27af43974598ccaa6ea3c355c3ae5c1d5177e21a427bd1a7e70bdce3b4affdbcea39f2ffaa213984380213caeec2a5a6a00da#npm:26.3.0"],
             ["jest", "npm:26.4.2"],
-            ["parcel", "npm:2.0.0-beta.1"]
+            ["parcel", "npm:2.0.0-beta.1"],
+            ["ramda", "npm:0.27.1"]
           ],
           "linkType": "SOFT",
         }]
@@ -9186,7 +9188,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["create-hash", "npm:1.2.0"],
             ["create-hmac", "npm:1.1.7"],
             ["ripemd160", "npm:2.0.2"],
-            ["safe-buffer", "npm:5.1.2"],
+            ["safe-buffer", "npm:5.2.1"],
             ["sha.js", "npm:2.4.11"]
           ],
           "linkType": "HARD",
@@ -9906,6 +9908,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["ramda", [
+        ["npm:0.27.1", {
+          "packageLocation": "./.yarn/cache/ramda-npm-0.27.1-5818f2cb83-9aa4655dff.zip/node_modules/ramda/",
+          "packageDependencies": [
+            ["ramda", "npm:0.27.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["randombytes", [
         ["npm:2.1.0", {
           "packageLocation": "./.yarn/cache/randombytes-npm-2.1.0-e3da76bccf-ede2693af0.zip/node_modules/randombytes/",
@@ -10529,7 +10540,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["sha.js", "npm:2.4.11"],
             ["inherits", "npm:2.0.4"],
-            ["safe-buffer", "npm:5.1.2"]
+            ["safe-buffer", "npm:5.2.1"]
           ],
           "linkType": "HARD",
         }]
@@ -11342,7 +11353,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/tunnel-agent-npm-0.6.0-64345ab7eb-03db75a4f9.zip/node_modules/tunnel-agent/",
           "packageDependencies": [
             ["tunnel-agent", "npm:0.6.0"],
-            ["safe-buffer", "npm:5.1.2"]
+            ["safe-buffer", "npm:5.2.1"]
           ],
           "linkType": "HARD",
         }]
