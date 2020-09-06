@@ -48,6 +48,6 @@ jobs:
       - run: npm i -g yarn
       - run: yarn install
       - run: yarn ci
-      - run: yarn publish
+      - run: yarn npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GithubPackgesToken}}
