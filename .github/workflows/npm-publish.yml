@@ -49,6 +49,9 @@ jobs:
       - run: npm i -g yarn
       - run: yarn install
       - run: yarn ci
+      - uses: actions/setup-node@v1
+        with:
+          registry-url: 'https://npm.pkg.github.com/'
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GithubPackgesToken}}
