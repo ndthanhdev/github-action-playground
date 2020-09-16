@@ -21,22 +21,6 @@ jobs:
       - run: yarn ci
       - run: yarn test
 
-  publish-npm:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
-      - run: npm i -g yarn
-      - run: yarn install
-      - run: yarn ci
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
-
   publish-gpr:
     needs: build
     runs-on: ubuntu-latest
