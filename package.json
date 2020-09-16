@@ -1,5 +1,5 @@
 {
-  "name": "github-action-playground",
+  "name": "@ndthanhdev/github-action-playground",
   "version": "1.0.6",
   "scripts": {
     "build": "parcel build src/index.js",
