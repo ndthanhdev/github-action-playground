@@ -1,6 +1,6 @@
 {
   "name": "@ndthanhdev/github-action-playground",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "scripts": {
     "build": "parcel build src/index.js",
     "ci": "yarn run build && yarn run test",
