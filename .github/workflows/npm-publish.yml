@@ -6,20 +6,7 @@ name: Node.js Package
 on: push
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://npm.pkg.github.com/
-      - run: npm i -g yarn
-      - run: yarn install
-      - run: yarn ci
-      - run: yarn test
-
-  publish-gpr:
+  cd:
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -27,13 +14,13 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-          registry-url: 'https://npm.pkg.github.com/'
       - run: npm i -g yarn
       - run: yarn install
       - run: yarn ci
       - uses: actions/setup-node@v1
-        with:
-          registry-url: 'https://npm.pkg.github.com/'
-      - run: yarn npm publish
+      - run: yarn config set npmPublishRegistry 'https://npm.pkg.github.com/'
+      - shell: pwsh
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GithubPackgesToken}}
+          SUPER_SECRET: ${{ secrets.GithubPackgesToken }}
+        run: yarn config set npmAuthToken "$env:SUPER_SECRET"
+      - run: yarn npm publish

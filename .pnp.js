@@ -19,14 +19,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     ],
     "dependencyTreeRoots": [
       {
-        "name": "github-action-playground",
+        "name": "@ndthanhdev/github-action-playground",
         "reference": "workspace:."
       }
     ],
     "enableTopLevelFallback": true,
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)",
     "fallbackExclusionList": [
-      ["github-action-playground", ["workspace:."]]
+      ["@ndthanhdev/github-action-playground", ["workspace:."]]
     ],
     "fallbackPool": [
     ],
@@ -2170,6 +2170,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["chalk", "npm:4.1.0"]
           ],
           "linkType": "HARD",
+        }]
+      ]],
+      ["@ndthanhdev/github-action-playground", [
+        ["workspace:.", {
+          "packageLocation": "./",
+          "packageDependencies": [
+            ["@ndthanhdev/github-action-playground", "workspace:."],
+            ["@babel/core", "npm:7.11.6"],
+            ["@babel/preset-env", "virtual:fbcdf27d3c6ce188ba6e8c82f32fc946e8125818b5f3e5ca428b8a8c1dd2728fa7ba4da54e13ddd80eb6ee95ee23fd30561cde89a84ba99a80ecd2ebfafbaa81#npm:7.11.5"],
+            ["babel-jest", "virtual:3bf5cb85a2e664643c98d2e719d27af43974598ccaa6ea3c355c3ae5c1d5177e21a427bd1a7e70bdce3b4affdbcea39f2ffaa213984380213caeec2a5a6a00da#npm:26.3.0"],
+            ["jest", "npm:26.4.2"],
+            ["parcel", "npm:2.0.0-beta.1"],
+            ["ramda", "npm:0.27.1"]
+          ],
+          "linkType": "SOFT",
         }]
       ]],
       ["@nodelib/fs.scandir", [
@@ -6189,21 +6204,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["assert-plus", "npm:1.0.0"]
           ],
           "linkType": "HARD",
-        }]
-      ]],
-      ["github-action-playground", [
-        ["workspace:.", {
-          "packageLocation": "./",
-          "packageDependencies": [
-            ["github-action-playground", "workspace:."],
-            ["@babel/core", "npm:7.11.6"],
-            ["@babel/preset-env", "virtual:fbcdf27d3c6ce188ba6e8c82f32fc946e8125818b5f3e5ca428b8a8c1dd2728fa7ba4da54e13ddd80eb6ee95ee23fd30561cde89a84ba99a80ecd2ebfafbaa81#npm:7.11.5"],
-            ["babel-jest", "virtual:3bf5cb85a2e664643c98d2e719d27af43974598ccaa6ea3c355c3ae5c1d5177e21a427bd1a7e70bdce3b4affdbcea39f2ffaa213984380213caeec2a5a6a00da#npm:26.3.0"],
-            ["jest", "npm:26.4.2"],
-            ["parcel", "npm:2.0.0-beta.1"],
-            ["ramda", "npm:0.27.1"]
-          ],
-          "linkType": "SOFT",
         }]
       ]],
       ["glob", [
