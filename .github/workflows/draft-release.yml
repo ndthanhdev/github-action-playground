@@ -6,35 +6,31 @@ on:
       version:
         description: Tag for release.
         required: true
-      ref:
-        description: Ref release will point to.
+      releaseBranch:
+        description: Limit pull requests to the release branch.
         required: true
       sinceTag:
         description: Changelog will start after specified tag.
         required: true
 
 jobs:
+  generate-changelog:
+    runs-on: ubuntu-latest
   draft-release:
     runs-on: ubuntu-latest
     steps:
-      - name: Init draft release
-        uses: meeDamian/github-release@2.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          draft: true
-          tag: ${{ github.event.inputs.version }}
-          commitish: ${{ github.event.inputs.ref }}
       - name: Generate changelog
         id: changelog
         uses: heinrichreimer/github-changelog-generator-action@v2.1.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           sinceTag: ${{ github.event.inputs.since }}
-          dueTag: ${{ github.event.inputs.version }}
-      - name: Update changelog
+          releaseBranch: ${{ github.event.inputs.branch }}
+      - name: Draft release
         uses: meeDamian/github-release@2.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ github.event.inputs.version }}
           draft: true
-          body: ${{ steps.changelog.outputs.changelog }}
+          name: ${{ github.event.inputs.version }}
+          tag: ${{ github.event.inputs.version }}
+          commitish: ${{ github.event.inputs.releaseBranch }}
