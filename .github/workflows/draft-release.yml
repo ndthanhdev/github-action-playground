@@ -28,7 +28,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: my-artifact
-          path: /github/workspace/CHANGELOG.md
+          path: CHANGELOG.md
       - name: Draft Release
         uses: meeDamian/github-release@2.0
         with:
