@@ -15,6 +15,7 @@ on:
 
 jobs:
   draft-release:
+    name: Generating release ${{ github.event.inputs.version }}
     runs-on: ubuntu-latest
     steps:
       - name: Generate changelog
