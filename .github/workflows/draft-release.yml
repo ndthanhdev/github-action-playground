@@ -1,0 +1,39 @@
+name: Draft Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Tag for release.
+        required: true
+      ref:
+        description: Ref release will point to.
+        required: true
+      sinceTag:
+        description: Changelog will start after specified tag.
+        required: true
+
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Init draft release
+        uses: meeDamian/github-release@2.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          draft: true
+          tag: ${{ github.event.inputs.version }}
+          commitish: ${{ github.event.inputs.ref }}
+      - name: Generate changelog
+        id: changelog
+        uses: heinrichreimer/github-changelog-generator-action@v2.1.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          sinceTag: ${{ github.event.inputs.since }}
+          dueTag: ${{ github.event.inputs.version }}
+      - name: Update changelog
+                uses: meeDamian/github-release@2.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          draft: true
+          body: ${{ steps.changelog.outputs }}
