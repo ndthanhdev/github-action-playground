@@ -14,7 +14,7 @@ on:
         required: true
 
 jobs:
-  cd:
+  draft-release:
     runs-on: ubuntu-latest
     steps:
       - name: Init draft release
@@ -36,4 +36,4 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           draft: true
-          body: ${{ steps.changelog.outputs }}
+          body: ${{ steps.changelog.outputs.changelog }}
