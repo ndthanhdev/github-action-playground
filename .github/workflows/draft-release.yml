@@ -37,4 +37,4 @@ jobs:
           name: ${{ github.event.inputs.version }}
           tag: ${{ github.event.inputs.version }}
           commitish: ${{ github.event.inputs.releaseBranch }}
-          body: ${{ steps.changelog.outputs.changelog }}
+          body: "${{ steps.changelog.outputs.changelog }}"
