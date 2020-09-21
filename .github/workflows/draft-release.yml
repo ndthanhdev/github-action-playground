@@ -19,17 +19,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Generate changelog
-        id: changelog
+        id: genChangelog
         uses: heinrichreimer/github-changelog-generator-action@v2.1.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           sinceTag: ${{ github.event.inputs.since }}
           releaseBranch: ${{ github.event.inputs.releaseBranch }}
+      - run: echo ${{ steps.genChangelog.outputs.changelog }}
       - uses: actions/upload-artifact@v2
         with:
           name: my-artifact
           path: CHANGELOG.md
-      - run: echo ${{ steps.changelog.outputs.changelog }}
+      - name: Read changelog
+          id: readChangelog
+          uses: juliangruber/read-file-action@v1
+          with:
+            path: CHANGELOG.md
       - name: Draft Release
         uses: meeDamian/github-release@2.0
         with:
@@ -38,4 +43,4 @@ jobs:
           name: ${{ github.event.inputs.version }}
           tag: ${{ github.event.inputs.version }}
           commitish: ${{ github.event.inputs.releaseBranch }}
-          body: "${{ steps.changelog.outputs.changelog }}"
+          body: ${{ steps.readChangelog.outputs.content }}
