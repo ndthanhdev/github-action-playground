@@ -11,8 +11,6 @@ on:
     types:
       - edited
       - labeled
-      - opened
-      - reopened
 
 jobs:
   update_release_draft:
