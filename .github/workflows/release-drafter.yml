@@ -5,6 +5,12 @@ on:
     # branches to consider in the event; optional, defaults to all
     branches:
       - master
+  pull_request:
+    branches:
+      - master
+    types:
+      - edited
+      - labeled
 
 jobs:
   update_release_draft:
