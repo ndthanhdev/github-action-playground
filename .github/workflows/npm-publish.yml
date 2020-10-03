@@ -20,7 +20,7 @@ jobs:
       # - shell: pwsh
       #   env:
       #     SUPER_SECRET: ${{ secrets.GithubPackgesToken }}
-        run: yarn config set npmAuthToken "$env:SUPER_SECRET"
+      #   run: yarn config set npmAuthToken "$env:SUPER_SECRET"
       - run: yarn version -i 0.0.0-${{ github.sha }}
       - run: yarn npm publish
         env:
