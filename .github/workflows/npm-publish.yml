@@ -18,7 +18,7 @@ jobs:
         with:
           always-auth: true
       - run: npm i -g yarn
-      - run: echo ${{ github.event.tag_name }}
+      - run: echo ${{ github.event.release.tag_name }}
       - run: yarn install
       - run: yarn ci
       - run: yarn config set npmPublishRegistry 'https://npm.pkg.github.com/'
