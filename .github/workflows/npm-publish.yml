@@ -23,3 +23,5 @@ jobs:
         run: yarn config set npmAuthToken "$env:SUPER_SECRET"
       - run: yarn version -i 0.0.0-${{ github.sha }}
       - run: yarn npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GithubPackgesToken }}
